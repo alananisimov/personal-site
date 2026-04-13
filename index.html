@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -9,28 +10,32 @@
             --bg-color: #ffffff;
             --link-color: #000088;
         }
+        /* Оптимизация для печати и одной страницы */
+        @page {
+            size: A4;
+            margin: 0;
+        }
         body {
             font-family: "Latin Modern Roman", "Computer Modern Roman", "CMU Serif", Garamond, Georgia, "Times New Roman", serif;
             color: var(--text-color);
             background-color: var(--bg-color);
             max-width: 800px;
             margin: 0 auto;
-            padding: 3rem 2rem;
-            line-height: 1.45;
-            font-size: 16px;
+            padding: 1.5rem 2.5rem; /* Уменьшены поля */
+            line-height: 1.3; /* Более плотный текст */
+            font-size: 14.5px; /* Оптимальный размер для одной страницы */
             text-rendering: optimizeLegibility;
-            hyphens: auto;
         }
         h1 {
             text-align: center;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: normal;
-            margin: 0 0 8px 0;
+            margin: 0 0 4px 0;
         }
         .contact-info {
             text-align: center;
-            font-size: 14px;
-            margin-bottom: 32px;
+            font-size: 13px;
+            margin-bottom: 15px; /* Уплотнено */
         }
         a {
             color: var(--link-color);
@@ -40,23 +45,23 @@
             text-decoration: underline;
         }
         .separator {
-            margin: 0 8px;
+            margin: 0 5px;
             color: #555;
         }
         h2 {
-            font-size: 18px;
+            font-size: 16px;
             font-variant: small-caps;
             font-weight: normal;
             border-bottom: 1px solid var(--text-color);
-            margin-top: 28px;
-            margin-bottom: 12px;
-            padding-bottom: 2px;
+            margin-top: 14px; /* Уменьшен отступ перед секцией */
+            margin-bottom: 8px;
+            padding-bottom: 1px;
         }
         .entry {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
         .entry-title {
             font-weight: bold;
@@ -67,27 +72,31 @@
         .entry-date {
             text-align: right;
             white-space: nowrap;
+            font-size: 13.5px;
         }
         .entry-description {
-            margin-top: 0;
-            margin-bottom: 16px;
-            text-align: justify;
+            margin-bottom: 10px; /* Уплотнено */
         }
         ul {
-            margin-top: 4px;
-            margin-bottom: 16px;
-            padding-left: 24px;
+            margin-top: 2px;
+            margin-bottom: 8px; /* Уменьшен отступ после списков */
+            padding-left: 20px;
         }
         li {
-            margin-bottom: 4px;
+            margin-bottom: 2px; /* Расстояние между пунктами */
             text-align: justify;
         }
+        /* Убираем лишние отступы у последнего элемента */
+        section:last-of-type .entry-description {
+            margin-bottom: 0;
+        }
+
         @media (max-width: 600px) {
-            body { padding: 1.5rem 1rem; }
+            body { padding: 1rem; }
             .entry { flex-direction: column; }
-            .entry-date { text-align: left; font-style: italic; opacity: 0.8; }
+            .entry-date { text-align: left; font-style: italic; }
             .separator { display: none; }
-            .contact-info a { display: block; margin-bottom: 4px; }
+            .contact-info a { display: block; margin-bottom: 2px; }
         }
     </style>
 </head>
@@ -107,7 +116,7 @@
 
     <section>
         <h2>Навыки</h2>
-        <p style="margin-top: 0;">
+        <p style="margin-top: 0; margin-bottom: 5px;">
             <strong>Языки программирования:</strong> TypeScript, Go, Python, C/C++, HTML/CSS, Kotlin, Bash<br>
             <strong>Библиотеки и фреймворки:</strong> React, Next.js, Tailwind CSS, Pandas, NumPy, Matplotlib, Seaborn<br>
             <strong>Инфраструктура и инструменты:</strong> Git, Docker, RabbitMQ, gRPC, NGINX, Caddy, UNIX-системы<br>
@@ -118,94 +127,73 @@
     <section>
         <h2>Академические достижения</h2>
         <div class="entry">
-            <div>
-                <span class="entry-title">Призер олимпиады DANO</span>
-            </div>
+            <span class="entry-title">Призер олимпиады DANO</span>
             <div class="entry-date">Ноябрь 2025 — Декабрь 2025</div>
         </div>
-        <div class="entry-description">
-            <ul>
-                <li>22/70 место в командном зачёте, топ 40% в индивидуальном</li>
-                <li>Провел качественный предварительный анализ (EDA), используя Plotly и Seaborn</li>
-                <li>Сформулировал и проверил бизнес-гипотезы на основе данных</li>
-                <li>Разработал механизм, опираясь на релевантные исследования</li>
-            </ul>
-        </div>
+        <ul>
+            <li>22/70 место в командном зачёте, топ 40% в индивидуальном</li>
+            <li>Провел качественный предварительный анализ (EDA), используя Plotly и Seaborn</li>
+            <li>Сформулировал и проверил бизнес-гипотезы на основе данных</li>
+            <li>Разработал механизм, опираясь на релевантные исследования</li>
+        </ul>
+
         <div class="entry">
-            <div>
-                <span class="entry-title">Победитель хакатона DANO</span>
-            </div>
+            <span class="entry-title">Победитель хакатона DANO</span>
             <div class="entry-date">Июнь 2025</div>
         </div>
-        <div class="entry-description">
-            <ul>
-                <li>Впервые применил навыки EDA и статистического анализа в реальном бизнес-датасете в условиях ограниченного времени</li>
-                <li>Провел предварительный анализ и проверку гипотез, используя Pandas, Matplotlib и Statsmodels</li>
-                <li>В составе команды из 6 человек разработал финальную презентацию и защитил решение перед экспертами</li>
-            </ul>
-        </div>
+        <ul>
+            <li>Впервые применил навыки EDA и статистического анализа в реальном бизнес-датасете</li>
+            <li>Провел предварительный анализ и проверку гипотез (Pandas, Matplotlib, Statsmodels)</li>
+            <li>В составе команды из 6 человек разработал и защитил решение перед экспертами</li>
+        </ul>
+
         <div class="entry">
-            <div>
-                <span class="entry-title">Финалист олимпиады PROD</span>
-            </div>
+            <span class="entry-title">Финалист олимпиады PROD</span>
             <div class="entry-date">Февраль 2025 — Март 2025</div>
         </div>
-        <div class="entry-description">
-            <ul>
-                <li>Работал в команде из 5 человек над MVP приложения для управления коворкингом</li>
-                <li>Сделал макет дизайна в Figma и спроектировал frontend-архитектуру сервиса</li>
-                <li>Создал прототип UI-кита для отображения специфических элементов</li>
-                <li>Разработал фронтенд на основе React, Typescript, Next.js, Shadcn</li>
-            </ul>
-        </div>
+        <ul>
+            <li>Работал в команде над MVP приложения для управления коворкингом</li>
+            <li>Создал макет в Figma и спроектировал frontend-архитектуру сервиса</li>
+            <li>Разработал фронтенд на основе React, Typescript, Next.js, Shadcn</li>
+        </ul>
     </section>
 
     <section>
         <h2>Проекты</h2>
         <div class="entry">
-            <div>
-                <span class="entry-title">NFT-Marketplace</span>, <span class="entry-location">Разработчик</span>
-            </div>
+            <div><span class="entry-title">NFT-Marketplace</span>, <span class="entry-location">Разработчик</span></div>
             <div class="entry-date">Ноябрь 2024 — Февраль 2025</div>
         </div>
-        <div class="entry-description">
-            <ul>
-                <li>Разработал веб-приложение внутри Telegram для выпуска и продажи авторских NFT на базе блокчейна Stellar</li>
-                <li>Интегрировал SDK Stellar для создания транзакций, управления ключами и взаимодействия с ассетами сети</li>
-                <li>Реализовал фронтенд на Next.js, создав кастомный UI-кит</li>
-                <li>Кратно ускорил логику взаимодействия с блокчейном, используя агрессивное кэширование</li>
-            </ul>
-        </div>
+        <ul>
+            <li>Разработал Mini App в Telegram для выпуска и продажи NFT на Stellar</li>
+            <li>Интегрировал SDK Stellar для транзакций и управления ассетами</li>
+            <li>Реализовал фронтенд на Next.js с кастомным UI-китом</li>
+            <li>Ускорил работу с блокчейном через агрессивное кэширование</li>
+        </ul>
+
         <div class="entry">
-            <div>
-                <span class="entry-title">AD-Platform</span>, <span class="entry-location">Разработчик</span>
-            </div>
+            <div><span class="entry-title">AD-Platform</span>, <span class="entry-location">Разработчик</span></div>
             <div class="entry-date">Январь 2025</div>
         </div>
-        <div class="entry-description">
-            <ul>
-                <li>Спроектировал и реализовал отказоустойчивую микросервисную систему с использованием gRPC для синхронного взаимодействия и RabbitMQ для асинхронных событий</li>
-                <li>Разработал алгоритм ранжирования рекламы в реальном времени, учитывающий ML-score для релевантности, ожидаемую прибыль и лимиты по показам/кликам</li>
-                <li>Реализовал многоуровневое хранение данных: PostgreSQL, MongoDB, Minio, Redis</li>
-                <li>Внедрил инфраструктуру мониторинга и трассировки запросов с использованием Prometheus, Grafana, Jaeger и Tempo</li>
-                <li>Обеспечил покрытие Unit и E2E тестами с использованием Testcontainers для изоляции окружения</li>
-            </ul>
-        </div>
+        <ul>
+            <li>Спроектировал микросервисную систему (gRPC, RabbitMQ)</li>
+            <li>Разработал алгоритм ранжирования рекламы в реальном времени (ML-score, прибыль)</li>
+            <li>Внедрил мониторинг и трассировку (Prometheus, Grafana, Jaeger)</li>
+            <li>Обеспечил покрытие тестами с использованием Testcontainers</li>
+        </ul>
     </section>
 
     <section>
         <h2>Образование</h2>
         <div class="entry">
-            <div>
-                <span class="entry-title">Школа ЦПМ</span>, <span class="entry-location">Москва, РФ</span>
-            </div>
-            <div class="entry-date">2025 — настоящее время</div>
+            <div><span class="entry-title">Школа ЦПМ</span>, <span class="entry-location">Москва, РФ</span></div>
+            <div class="entry-date">2025 — н. в.</div>
         </div>
-        <div class="entry-description">
-            Информатический профиль, Средняя оценка 5.0/5.0<br>
-            <ul>
-                <li>Лучшая (топ-1) школа в России по числу награжденных во ВСОШ с высокой конкуренцией при поступлении</li>
-                <li>Зачислен на факультативные курсы по олимпиадной математике и спортивному программированию</li>
+        <div style="margin-top: 2px;">
+            Информатический профиль, Средняя оценка 5.0/5.0
+            <ul style="margin-bottom: 0;">
+                <li>Топ-1 школа в РФ по числу наград ВСОШ; высокая конкуренция при поступлении</li>
+                <li>Курсы по олимпиадной математике и спортивному программированию</li>
             </ul>
         </div>
     </section>

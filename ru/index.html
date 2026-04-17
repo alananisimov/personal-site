@@ -4,97 +4,223 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Резюме | Александр Анисимов</title>
-    <link rel="canonical" href="https://aanisimov.com/ru/" />
-    <link rel="alternate" hreflang="en" href="https://aanisimov.com/" />
-    <link rel="alternate" hreflang="ru" href="https://aanisimov.com/ru/" />
+    <meta name="description" content="Александр Анисимов — Разработчик. Навыки: TypeScript, Go, Python, C/C++.">
+
+    <link rel="canonical" href="https://gothex.xyz/ru/" />
+    <link rel="alternate" hreflang="en" href="https://gothex.xyz/" />
+    <link rel="alternate" hreflang="ru" href="https://gothex.xyz/ru/" />
+
     <style>
-        /* Стили идентичны основной версии */
-        :root { --text-color: #000000; --bg-color: #ffffff; --link-color: #000088; }
-        body { font-family: "Latin Modern Roman", "CMU Serif", serif; color: var(--text-color); background-color: var(--bg-color); max-width: 800px; margin: 0 auto; padding: 1.5rem 2.5rem; line-height: 1.3; font-size: 14.5px; }
-        .lang-switcher { position: absolute; top: 15px; right: 20px; font-family: sans-serif; font-size: 12px; }
-        .lang-switcher a { color: #555; text-decoration: underline; padding: 0 5px; }
-        .lang-switcher b { color: var(--text-color); padding: 0 5px; }
-        h1 { text-align: center; font-size: 22px; font-weight: normal; margin: 0 0 4px 0; }
-        .contact-info { text-align: center; font-size: 13px; margin-bottom: 15px; }
-        a { color: var(--link-color); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .separator { margin: 0 5px; color: #555; }
-        h2 { font-size: 16px; font-variant: small-caps; font-weight: normal; border-bottom: 1px solid var(--text-color); margin-top: 14px; margin-bottom: 8px; }
-        .entry { display: flex; justify-content: space-between; align-items: baseline; }
-        .entry-title { font-weight: bold; }
-        .entry-date { text-align: right; white-space: nowrap; font-size: 13.5px; }
-        ul { margin-top: 2px; margin-bottom: 8px; padding-left: 20px; }
-        li { margin-bottom: 2px; text-align: justify; }
+        /* Стили полностью идентичны оригинальному файлу */
+        :root {
+            --text-color: #000000;
+            --bg-color: #ffffff;
+            --link-color: #000088;
+        }
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        body {
+            font-family: "Latin Modern Roman", "Computer Modern Roman", "CMU Serif", Garamond, Georgia, "Times New Roman", serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1.5rem 2.5rem;
+            line-height: 1.3;
+            font-size: 14.5px;
+            text-rendering: optimizeLegibility;
+        }
+        .lang-switcher {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-family: sans-serif;
+            font-size: 12px;
+        }
+        .lang-switcher a, .lang-switcher span {
+            background: none;
+            border: none;
+            color: #555;
+            text-decoration: underline;
+            padding: 0 5px;
+            cursor: pointer;
+        }
+        .lang-switcher span.active {
+            color: var(--text-color);
+            font-weight: bold;
+            text-decoration: none;
+        }
+        h1 {
+            text-align: center;
+            font-size: 22px;
+            font-weight: normal;
+            margin: 0 0 4px 0;
+        }
+        .contact-info {
+            text-align: center;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .separator {
+            margin: 0 5px;
+            color: #555;
+        }
+        h2 {
+            font-size: 16px;
+            font-variant: small-caps;
+            font-weight: normal;
+            border-bottom: 1px solid var(--text-color);
+            margin-top: 14px;
+            margin-bottom: 8px;
+            padding-bottom: 1px;
+        }
+        .entry {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+        .entry-title {
+            font-weight: bold;
+        }
+        .entry-location {
+            font-style: italic;
+        }
+        .entry-date {
+            text-align: right;
+            white-space: nowrap;
+            font-size: 13.5px;
+        }
+        ul {
+            margin-top: 2px;
+            margin-bottom: 8px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 2px;
+            text-align: justify;
+        }
         @media (max-width: 600px) {
             body { padding: 1rem; padding-top: 2.5rem; }
             .entry { flex-direction: column; }
             .entry-date { text-align: left; font-style: italic; }
             .separator { display: none; }
             .contact-info a { display: block; margin-bottom: 2px; }
+            .lang-switcher { top: 10px; right: 10px; }
         }
     </style>
 </head>
 <body>
+
     <div class="lang-switcher">
-        <a href="/">EN</a> | <b>RU</b>
+        <a href="/">EN</a> |
+        <span class="active">RU</span>
     </div>
+
     <header>
         <h1>Александр Анисимов</h1>
         <div class="contact-info">
-            <a href="mailto:gothex@disroot.org">gothex@disroot.org</a> <span class="separator">&bull;</span>
-            <a href="https://github.com/alananisimov" target="_blank">github.com/alananisimov</a> <span class="separator">&bull;</span>
-            <a href="tel:+79237090158">+7 (923) 709-0158</a> <span class="separator">&bull;</span>
-            <a href="https://aanisimov.com">aanisimov.com</a>
+            <a href="mailto:gothex@disroot.org">gothex@disroot.org</a>
+            <span class="separator">&bull;</span>
+            <a href="https://github.com/alananisimov" target="_blank" rel="noopener">github.com/alananisimov</a>
+            <span class="separator">&bull;</span>
+            <a href="tel:+79237090158">+7 (923) 709-0158</a>
+            <span class="separator">&bull;</span>
+            <a href="https://gothex.xyz" target="_blank" rel="noopener">gothex.xyz</a>
         </div>
     </header>
 
     <section>
         <h2>Навыки</h2>
-        <p style="margin-top: 0;">
+        <p style="margin-top: 0; margin-bottom: 5px;">
             <strong>Языки программирования:</strong> TypeScript, Go, Python, C/C++, HTML/CSS, Kotlin, Bash<br>
             <strong>Библиотеки и фреймворки:</strong> React, Next.js, Tailwind CSS, Pandas, NumPy, Matplotlib, Seaborn<br>
-            <strong>Инфраструктура:</strong> Git, Docker, RabbitMQ, gRPC, NGINX, UNIX-системы<br>
+            <strong>Инфраструктура и инструменты:</strong> Git, Docker, RabbitMQ, gRPC, NGINX, Caddy, UNIX-системы<br>
             <strong>Иностранные языки:</strong> Английский (C1), Немецкий (B2, Goethe-Zertifikat)
         </p>
     </section>
 
     <section>
         <h2>Академические достижения</h2>
-        <div class="entry"><span class="entry-title">Призер олимпиады DANO</span><div class="entry-date">Ноябрь 2025 — Декабрь 2025</div></div>
+        <div class="entry">
+            <span class="entry-title">Призер олимпиады DANO</span>
+            <div class="entry-date">Ноябрь 2025 — Декабрь 2025</div>
+        </div>
         <ul>
             <li>22/70 место в командном зачёте, топ 40% в индивидуальном</li>
             <li>Провел качественный предварительный анализ (EDA), используя Plotly и Seaborn</li>
             <li>Сформулировал и проверил бизнес-гипотезы на основе данных</li>
+            <li>Разработал механизм, опираясь на релевантные исследования</li>
         </ul>
-        <div class="entry"><span class="entry-title">Победитель хакатона DANO</span><div class="entry-date">Июнь 2025</div></div>
+
+        <div class="entry">
+            <span class="entry-title">Победитель хакатона DANO</span>
+            <div class="entry-date">Июнь 2025</div>
+        </div>
         <ul>
             <li>Впервые применил навыки EDA и статистического анализа в реальном бизнес-датасете</li>
-            <li>Разработал и защитил решение перед экспертами в составе команды</li>
+            <li>Провел предварительный анализ и проверку гипотез (Pandas, Matplotlib, Statsmodels)</li>
+            <li>В составе команды из 6 человек разработал и защитил решение перед экспертами</li>
         </ul>
-        <div class="entry"><span class="entry-title">Финалист олимпиады PROD</span><div class="entry-date">Февраль 2025 — Март 2025</div></div>
+
+        <div class="entry">
+            <span class="entry-title">Финалист олимпиады PROD</span>
+            <div class="entry-date">Февраль 2025 — Март 2025</div>
+        </div>
         <ul>
             <li>Работал в команде над MVP приложения для управления коворкингом</li>
-            <li>Разработал фронтенд на React, TypeScript, Next.js, Shadcn</li>
+            <li>Создал макет в Figma и спроектировал frontend-архитектуру сервиса</li>
+            <li>Разработал фронтенд на основе React, Typescript, Next.js, Shadcn</li>
         </ul>
     </section>
 
     <section>
         <h2>Проекты</h2>
-        <div class="entry"><div><span class="entry-title">NFT-Marketplace</span>, <i>Разработчик</i></div><div class="entry-date">2024 — 2025</div></div>
+        <div class="entry">
+            <div><span class="entry-title">NFT-Marketplace</span>, <span class="entry-location">Разработчик</span></div>
+            <div class="entry-date">Ноябрь 2024 — Февраль 2025</div>
+        </div>
         <ul>
-            <li>Mini App в Telegram для работы с NFT на Stellar.</li>
+            <li>Разработал Mini App в Telegram для выпуска и продажи NFT на Stellar</li>
+            <li>Интегрировал SDK Stellar для транзакций и управления ассетами</li>
+            <li>Реализовал фронтенд на Next.js с кастомным UI-китом</li>
+            <li>Ускорил работу с блокчейном через агрессивное кэширование</li>
         </ul>
-        <div class="entry"><div><span class="entry-title">AD-Platform</span>, <i>Разработчик</i></div><div class="entry-date">Январь 2025</div></div>
+
+        <div class="entry">
+            <span class="entry-title">AD-Platform</span>, <span class="entry-location">Разработчик</span>
+            <div class="entry-date">Январь 2025</div>
+        </div>
         <ul>
-            <li>Микросервисная система (gRPC, RabbitMQ) с алгоритмом ранжирования рекламы.</li>
-            <li>Внедрил мониторинг (Prometheus, Grafana) и Testcontainers.</li>
+            <li>Спроектировал микросервисную систему (gRPC, RabbitMQ)</li>
+            <li>Разработал алгоритм ранжирования рекламы в реальном времени (ML-score, прибыль)</li>
+            <li>Внедрил мониторинг и трассировку (Prometheus, Grafana, Jaeger)</li>
+            <li>Обеспечил покрытие тестами с использованием Testcontainers</li>
         </ul>
     </section>
 
     <section>
         <h2>Образование</h2>
-        <div class="entry"><div><span class="entry-title">Школа ЦПМ</span>, <i>Москва, РФ</i></div><div class="entry-date">2025 — н. в.</div></div>
-        <p>Информатический профиль, средняя оценка 5.0/5.0. Курсы по олимпиадной математике и программированию.</p>
+        <div class="entry">
+            <div><span class="entry-title">Школа ЦПМ</span>, <span class="entry-location">Москва, РФ</span></div>
+            <div class="entry-date">2025 — н. в.</div>
+        </div>
+        <div style="margin-top: 2px;">
+            Информатический профиль, Средняя оценка 5.0/5.0
+            <ul style="margin-bottom: 0;">
+                <li>Топ-1 школа в РФ по числу наград ВСОШ; высокая конкуренция при поступлении</li>
+                <li>Курсы по олимпиадной математике и спортивному программированию</li>
+            </ul>
+        </div>
     </section>
 </body>
 </html>

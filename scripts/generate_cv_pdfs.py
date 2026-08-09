@@ -145,7 +145,7 @@ CV_DATA = {
             ),
             (
                 "Mathematics",
-                "Probability, mathematical statistics, linear algebra, Calculus I, and introductory econometrics",
+                "Probability, mathematical statistics, linear algebra (MIT 18.06), Calculus II, and introductory econometrics",
             ),
             (
                 "Engineering",
@@ -268,8 +268,8 @@ CV_DATA = {
             ),
             (
                 "Математика",
-                "Теория вероятностей, математическая статистика, линейная алгебра, "
-                "математический анализ уровня Calculus I, основы эконометрики",
+                "Теория вероятностей, математическая статистика, линейная алгебра (MIT 18.06), "
+                "математический анализ уровня Calculus II, основы эконометрики",
             ),
             (
                 "Разработка",

@@ -43,7 +43,7 @@ CV_DATA = {
     "en": {
         "filename": "alexander-anisimov-cv-en.pdf",
         "name": "Alexander Anisimov",
-        "headline": "Data Analysis | Product Analytics | Statistics",
+        "headline": "Machine Learning | Data Analysis | Statistics",
         "contacts": [
             ("alananisimov@gmail.com", "mailto:alananisimov@gmail.com"),
             ("GitHub", "https://github.com/alananisimov"),
@@ -54,7 +54,7 @@ CV_DATA = {
         "profile": (
             "High school student at CPM School and a final-stage DANO prize winner. Analyzed T-Bank "
             "business data and public road-safety data using Python, statistical methods, and data "
-            "visualization. Seeking a data or product analytics internship."
+            "visualization. Seeking a machine learning engineering internship."
         ),
         "education_title": "Education",
         "education": {
@@ -63,7 +63,8 @@ CV_DATA = {
             "date": "2025 - 2027 (expected)",
             "bullets": [
                 "GPA: 5.0/5.0 across all subjects; coursework in olympiad mathematics and competitive programming",
-                "Independent study: Harvard STAT 110 (Probability), ISLP (Statistical Learning with Python), and econometrics",
+                "Independent study: Harvard STAT 110, ISLP, The Elements of Statistical Learning (ESL), and econometrics",
+                "Plan after graduation: pursue a bachelor's degree at the Technical University of Munich (TUM) from 2027",
             ],
         },
         "data_title": "Data Analysis & Competitions",
@@ -121,7 +122,7 @@ CV_DATA = {
                 "date": "2026 - Present",
                 "bullets": [
                     "Developing a cross-platform networking client with Kotlin Multiplatform and Compose for Android, iOS, macOS, Windows, and Linux",
-                    "Project adoption: 420+ GitHub stars, 40+ forks, and external contributions",
+                    "Project adoption: 512+ GitHub stars, 40+ forks, and external contributions",
                 ],
             },
             {
@@ -140,12 +141,13 @@ CV_DATA = {
             (
                 "Data & ML",
                 "Python, Pandas, NumPy, SciPy, scikit-learn, Statsmodels, Matplotlib, Seaborn, Plotly; "
-                "EDA, hypothesis testing, regression, tree-based models, PCA, feature engineering, "
+                "statistical learning theory, deep learning, EDA, hypothesis testing, regression, "
+                "tree-based models, PCA, feature engineering, "
                 "cross-validation, and model evaluation",
             ),
             (
                 "Mathematics",
-                "Probability, mathematical statistics, linear algebra (MIT 18.06), Calculus II, and introductory econometrics",
+                "Probability, mathematical statistics, linear algebra (MIT 18.06), Calculus III, and introductory econometrics",
             ),
             (
                 "Engineering",
@@ -166,7 +168,7 @@ CV_DATA = {
     "ru": {
         "filename": "alexander-anisimov-cv-ru.pdf",
         "name": "Александр Анисимов",
-        "headline": "Анализ данных | Продуктовая аналитика | Статистика",
+        "headline": "Машинное обучение | Анализ данных | Статистика",
         "contacts": [
             ("alananisimov@gmail.com", "mailto:alananisimov@gmail.com"),
             ("GitHub", "https://github.com/alananisimov"),
@@ -177,7 +179,7 @@ CV_DATA = {
         "profile": (
             "Ученик Школы ЦПМ и призёр заключительного этапа DANO. Анализировал бизнес-данные "
             "Т-Банка и открытые данные ГИБДД с помощью Python, статистических методов и визуализации. "
-            "Ищу стажировку аналитика данных или продуктового аналитика."
+            "Ищу стажировку ML-инженера."
         ),
         "education_title": "Образование",
         "education": {
@@ -186,7 +188,8 @@ CV_DATA = {
             "date": "2025 - 2027 (ожидается)",
             "bullets": [
                 "Средний балл: 5.0/5.0 по всем предметам; олимпиадная математика и спортивное программирование",
-                "Самостоятельное обучение: Harvard STAT 110 (теория вероятностей), ISLP (статистическое обучение на Python), эконометрика",
+                "Самостоятельное обучение: Harvard STAT 110, ISLP, The Elements of Statistical Learning (ESL), эконометрика",
+                "План после школы: бакалавриат в Technical University of Munich (TUM) с 2027 года",
             ],
         },
         "data_title": "Анализ данных и соревнования",
@@ -244,7 +247,7 @@ CV_DATA = {
                 "date": "2026 - н. в.",
                 "bullets": [
                     "Разрабатываю кроссплатформенный сетевой клиент на Kotlin Multiplatform и Compose для Android, iOS, macOS, Windows и Linux",
-                    "Проект получил более 420 звёзд и 40 форков на GitHub и внешние контрибуции",
+                    "Проект получил более 512 звёзд и 40 форков на GitHub и внешние контрибуции",
                 ],
             },
             {
@@ -263,13 +266,14 @@ CV_DATA = {
             (
                 "Анализ данных и ML",
                 "Python, Pandas, NumPy, SciPy, scikit-learn, Statsmodels, Matplotlib, Seaborn, Plotly; "
-                "EDA, проверка гипотез, регрессии, деревья решений и ансамбли, PCA, feature engineering, "
+                "теория статистического обучения, глубокое обучение, EDA, проверка гипотез, регрессии, "
+                "деревья решений и ансамбли, PCA, feature engineering, "
                 "кросс-валидация и оценка моделей",
             ),
             (
                 "Математика",
                 "Теория вероятностей, математическая статистика, линейная алгебра (MIT 18.06), "
-                "математический анализ уровня Calculus II, основы эконометрики",
+                "математический анализ уровня Calculus III, основы эконометрики",
             ),
             (
                 "Разработка",
@@ -440,7 +444,9 @@ def entry_header(entry: dict, styles: dict[str, ParagraphStyle]):
 
     left = Paragraph(title, styles["entry"])
     right = Paragraph(entry["date"], styles["entry_right"])
-    table = Table([[left, right]], colWidths=[157 * mm, 32 * mm])
+    # Leave a small safety margin inside the frame so longer Cyrillic dates do
+    # not touch or clip at the right page edge after font rounding.
+    table = Table([[left, right]], colWidths=[151 * mm, 34 * mm], hAlign="LEFT")
     table.setStyle(
         TableStyle(
             [
